@@ -1,0 +1,47 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FakturaMaker.src
+{
+    /// <summary>
+    /// Represents a card payment with bank account information.
+    /// </summary>
+    public class CardPayment
+    {
+        private string bankAccountNumber; // Represents bank account information for a card payment.
+        private string bankCode; // Represents the bank code for a card payment.
+        private string varSym; // Represents the variable symbol for a card payment.
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CardPayment"/> class.
+        /// </summary>
+        /// <param name="bankAccountNumber">The bank account number.</param>
+        /// <param name="bankCode">The bank code.</param>
+        /// <param name="varSym">The variable symbol.</param>
+        public CardPayment(string bankAccountNumber, string bankCode, string varSym)
+        {
+            this.bankAccountNumber = bankAccountNumber;
+            this.bankCode = bankCode;
+            this.varSym = varSym;
+        }
+
+        /// <summary>
+        /// Gets or sets the bank account number.
+        /// </summary>
+        public string BankAccountNumber { get; set; }
+
+        /// <summary>
+        /// Gets or sets the bank code.
+        /// </summary>
+        public string BankCode { get; set; }
+
+        /// <summary>
+        /// Gets or sets the variable symbol.
+        /// </summary>
+        public string VarSym { get; set; }
+
+    }
+}
