@@ -37,3 +37,4 @@ C:\Users\hkuba\Desktop\Projects\FakturaMaker\obj\Debug\net8.0\FakturaMaker.genru
 C:\Users\hkuba\Desktop\Projects\FakturaMaker\obj\Debug\net8.0\ref\FakturaMaker.dll
 C:\Users\hkuba\Desktop\Projects\FakturaMaker\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
 C:\Users\hkuba\Desktop\Projects\FakturaMaker\bin\Debug\net8.0\itext.bouncy-castle-adapter.dll
+C:\Users\hkuba\Desktop\Projects\FakturaMaker\obj\Debug\net8.0\FakturaMaker.sourcelink.json

@@ -11,7 +11,7 @@ namespace FakturaMaker.src
     /// </summary>
     public class Bill
     {
-        private CardPayment cardPayment;    // The card payment associated with the bill.
+        private CardPayment cardPayment = null;    // The card payment associated with the bill.
         private Subject sender;             // The sender of the bill.
         private Subject receiver;           // The receiver of the bill.
         private List<Item> items;           // The list of items included in the bill.
@@ -31,14 +31,18 @@ namespace FakturaMaker.src
         /// <param name="dateOfIssue">The date when the bill is issued.</param>
         public Bill(CardPayment cardPayment, Subject sender, Subject receiver, List<Item> items, DateOnly dueDate, DateOnly dateOfIssue)
         {
-            this.CardPayment = cardPayment;
-            this.Sender = sender;
-            this.Receiver = receiver;
-            this.Items = items;
-            this.DueDate = dueDate;
-            this.DateOfIssue = dateOfIssue;
-            this.Total = this.Items.Sum(item => item.Total);
-            this.TotalInclVat = this.Items.Sum(item => item.TotalInclVat);
+            if (dueDate < dateOfIssue)
+            {
+                throw new ArgumentOutOfRangeException("Due date cannot be earlier than date of issue.");
+            }
+            this.cardPayment = cardPayment;
+            this.sender = sender;
+            this.receiver = receiver;
+            this.items = items;
+            this.dueDate = dueDate;
+            this.dateOfIssue = dateOfIssue;
+            this.total = this.items.Sum(item => item.Total);
+            this.totalInclVat = this.items.Sum(item => item.TotalInclVat);
         }
         /// <summary>
         /// Initializes a new instance of the <see cref="Bill"/> class with specified parameters.
@@ -50,13 +54,16 @@ namespace FakturaMaker.src
         /// <param name="dateOfIssue">The date when the bill is issued.</param>
         public Bill(Subject sender, Subject receiver, List<Item> items, DateOnly dueDate, DateOnly dateOfIssue)
         {
+            if (dueDate < dateOfIssue) {
+                throw new ArgumentOutOfRangeException("Due date cannot be earlier than date of issue.");
+            }
             this.sender = sender;
             this.receiver = receiver;
             this.items = items;
             this.dueDate = dueDate;
             this.dateOfIssue = dateOfIssue;
-            this.Total = this.Items.Sum(item => item.Total);
-            this.TotalInclVat = this.Items.Sum(item => item.TotalInclVat);
+            this.Total = this.items.Sum(item => item.Total);
+            this.TotalInclVat = this.items.Sum(item => item.TotalInclVat);
         }
 
         /// <summary>
@@ -98,5 +105,54 @@ namespace FakturaMaker.src
         /// Gets or sets the total amount of the bill including VAT (Value Added Tax).
         /// </summary>
         public double TotalInclVat { get => totalInclVat; set => totalInclVat = value; }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("Bill Information:");
+            sb.AppendLine("---------------------------------------");
+            sb.AppendLine("Sender:");
+            sb.AppendLine($"Name: {this.sender.Name}");
+            sb.AppendLine($"City: {this.sender.Address.City}");
+            sb.AppendLine($"Postal Code: {this.sender.Address.PostalCode}");
+            sb.AppendLine($"House number: {this.sender.Address.HouseNumber}");
+            sb.AppendLine("---------------------------------------");
+            sb.AppendLine("Receiver:");
+            sb.AppendLine($"Name: {this.receiver.Name}");
+            sb.AppendLine($"City: {this.receiver.Address.City}");
+            sb.AppendLine($"Postal Code: {this.receiver.Address.PostalCode}");
+            sb.AppendLine($"House number: {this.receiver.Address.HouseNumber}");
+            sb.AppendLine("---------------------------------------");
+            if (this.cardPayment != null) {
+                sb.AppendLine("Card Payment:");
+                sb.AppendLine($"Bank Account Number: {this.cardPayment.BankAccountNumber}");
+                sb.AppendLine($"Bank Code: {this.cardPayment.BankCode}");
+                sb.AppendLine($"Variable Symbol: {this.cardPayment.VarSym}");
+                sb.AppendLine("---------------------------------------");
+            }
+            sb.AppendLine($"Date of Issue: {this.dateOfIssue}");
+            sb.AppendLine($"Due Date: {this.dueDate}");
+            sb.AppendLine("Items:");
+
+            foreach (Item item in this.items)
+            {
+                sb.AppendLine($"- Name: {item.Name}");
+                sb.AppendLine($"  Price: {item.Price}");
+                sb.AppendLine($"  Count: {item.Count}");
+                sb.AppendLine($"  Unit: {item.Unit}");
+                sb.AppendLine($"  Total: {item.Total}");
+                sb.AppendLine($"  VAT: {item.Vat}");
+                sb.AppendLine($"  Total (incl. VAT): {item.TotalInclVat}");
+            }
+
+            sb.AppendLine("---------------------------------------");
+            sb.AppendLine($"Total Amount: {this.total}");
+            sb.AppendLine($"Total Amount (incl. VAT): {this.totalInclVat}");
+
+            return sb.ToString();
+        }
+
+
     }
 }

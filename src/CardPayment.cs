@@ -31,17 +31,17 @@ namespace FakturaMaker.src
         /// <summary>
         /// Gets or sets the bank account number.
         /// </summary>
-        public string BankAccountNumber { get; set; }
+        public string BankAccountNumber { get => bankAccountNumber; set => bankAccountNumber = value; }
 
         /// <summary>
         /// Gets or sets the bank code.
         /// </summary>
-        public string BankCode { get; set; }
+        public string BankCode { get => bankCode; set => bankCode = value; }
 
         /// <summary>
         /// Gets or sets the variable symbol.
         /// </summary>
-        public string VarSym { get; set; }
+        public string VarSym { get => varSym; set => varSym = value; }
 
     }
 }

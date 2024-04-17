@@ -29,6 +29,32 @@ namespace FakturaMaker.src
             this.taxIdNumber = taxIdNumber;
             this.address = address;
         }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Subject"/> class with the specified name and ID number.
+        /// </summary>
+        /// <param name="name">The name of the subject.</param>
+        /// <param name="idNumber">The identification number of the subject.</param>
+        /// <param name="address">The address of the subject.</param>
+        public Subject(string name, int idNumber, Address address)
+        {
+            this.name = name;
+            this.idNumber = idNumber;
+            this.taxIdNumber = taxIdNumber;
+            this.address = address;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Subject"/> class with the specified name.
+        /// </summary>
+        /// <param name="name">The name of the subject.</param>
+
+        /// <param name="address">The address of the subject.</param>
+        public Subject(string name, Address address)
+        {
+            this.name = name;
+            this.taxIdNumber = taxIdNumber;
+            this.address = address;
+        }
 
         /// <summary>
         /// Gets or sets the name of the subject.

@@ -79,5 +79,6 @@ namespace FakturaMaker.src
         /// </summary>
         /// <value>The total price of the item including VAT.</value>
         public double TotalInclVat { get => totalInclVat; set => totalInclVat = value; }
+
     }
 }

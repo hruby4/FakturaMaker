@@ -24,6 +24,6 @@ internal class Program
 
         Bill bill = new Bill(payment, sender, receiver, items, dueDate, dateOfIssue);
 
-        PDFManipulator.CreateAndWrite(bill,"Bill.pdf");
+        Console.WriteLine(bill);
     }
 }
