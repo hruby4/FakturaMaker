@@ -106,6 +106,16 @@ namespace FakturaMaker.src
         /// </summary>
         public double TotalInclVat { get => totalInclVat; set => totalInclVat = value; }
 
+        public List<Item> selectItemsWithValuesHigherThan(double value){
+            List<Item> toReturn = Items.Where(i => i.Price > value).ToList();
+            return toReturn;
+        }
+
+        public List<Item> selectItemsWithValuesLowerThan(double value){
+            List<Item> toReturn = Items.Where(i => i.Price < value).ToList();
+            return toReturn;
+        }
+
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();

@@ -16,14 +16,14 @@ internal class Program
         DateOnly dateOfIssue = new DateOnly(2024, 5, 2);
 
 
-        Item item1 = new Item("Apple", 1.5, 5, "kg", 10);
-        Item item2 = new Item("Banana", 2, 10, "units", 5);
-        Item item3 = new Item("Orange", 1.2, 8, "kg", 8);
+        Item item1 = new Item("Apple", 200, 5, "kg", 10);
+        Item item2 = new Item("Banana", 300, 10, "units", 5);
+        Item item3 = new Item("Orange", 550, 8, "kg", 8);
 
         List<Item> items = [item1, item2, item3];
 
         Bill bill = new Bill(payment, sender, receiver, items, dueDate, dateOfIssue);
 
-        Console.WriteLine(bill);
+        Console.WriteLine(bill.selectItemsWithValuesMoreThan(200));
     }
 }
