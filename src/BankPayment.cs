@@ -9,19 +9,19 @@ namespace FakturaMaker.src
     /// <summary>
     /// Represents a card payment with bank account information.
     /// </summary>
-    public class CardPayment
+    public class BankPayment
     {
         private string bankAccountNumber; // Represents bank account information for a card payment.
         private string bankCode; // Represents the bank code for a card payment.
         private string varSym; // Represents the variable symbol for a card payment.
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CardPayment"/> class.
+        /// Initializes a new instance of the <see cref="BankPayment"/> class.
         /// </summary>
         /// <param name="bankAccountNumber">The bank account number.</param>
         /// <param name="bankCode">The bank code.</param>
         /// <param name="varSym">The variable symbol.</param>
-        public CardPayment(string bankAccountNumber, string bankCode, string varSym)
+        public BankPayment(string bankAccountNumber, string bankCode, string varSym)
         {
             this.bankAccountNumber = bankAccountNumber;
             this.bankCode = bankCode;

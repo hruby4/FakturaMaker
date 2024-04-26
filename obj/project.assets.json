@@ -4709,24 +4709,31 @@
     ]
   },
   "packageFolders": {
-    "/home/jhruby/.nuget/packages/": {}
+    "C:\\Users\\hkuba\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/jhruby/Documents/Projects/FakturaMaker/FakturaMaker/FakturaMaker.csproj",
+      "projectUniqueName": "C:\\Users\\hkuba\\Desktop\\Projects\\FakturaMaker\\FakturaMaker\\FakturaMaker.csproj",
       "projectName": "FakturaMaker",
-      "projectPath": "/home/jhruby/Documents/Projects/FakturaMaker/FakturaMaker/FakturaMaker.csproj",
-      "packagesPath": "/home/jhruby/.nuget/packages/",
-      "outputPath": "/home/jhruby/Documents/Projects/FakturaMaker/FakturaMaker/obj/",
+      "projectPath": "C:\\Users\\hkuba\\Desktop\\Projects\\FakturaMaker\\FakturaMaker\\FakturaMaker.csproj",
+      "packagesPath": "C:\\Users\\hkuba\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\hkuba\\Desktop\\Projects\\FakturaMaker\\FakturaMaker\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/home/jhruby/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\hkuba\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4775,7 +4782,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/jhruby/.dotnet/sdk/8.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

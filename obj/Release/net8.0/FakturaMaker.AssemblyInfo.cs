@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FakturaMaker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bbd685bd0a5a8f88dec55af01143d98e11ef0ce6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+14dc2795d7411c2f5027c9d962deacfdb32ae16e")]
 [assembly: System.Reflection.AssemblyProductAttribute("FakturaMaker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FakturaMaker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

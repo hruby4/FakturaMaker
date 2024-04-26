@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="FakturaMaker.src.Address">
+    <Position X="4.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIIAAACCAAAEAAAgBAAAIAAAAAAAA=</HashCode>
+      <FileName>src\Address.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FakturaMaker.src.Bill">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAiABgAAAAAACCAEAAiQAAAAABAEAAAQBAAAAAAIIAA=</HashCode>
+      <FileName>src\Bill.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="bankPayment" />
+      <Field Name="receiver" />
+      <Field Name="sender" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="items" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="FakturaMaker.src.BankPayment">
+    <Position X="8.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAEAACABAAAAAAAAAQAAACAAAA=</HashCode>
+      <FileName>src\BankPayment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FakturaMaker.src.Item">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABBIAAAQCgAAAAJAAAAAQAAAAEAAAAAEAQAAAAABA=</HashCode>
+      <FileName>src\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FakturaMaker.src.Subject">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAACAAAAAQAAAIEAAACCAAAAABAAAA=</HashCode>
+      <FileName>src\Subject.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="address" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

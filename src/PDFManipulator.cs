@@ -56,7 +56,7 @@ namespace FakturaMaker.src
 
             document.Add(itemsTable);
 
-            Paragraph totalAmount = new Paragraph("Total Amount: " + bill.Total)
+            Paragraph totalAmount = new Paragraph("Total Amount: " + bill.GetTotal())
                 .SetBold()
                 .SetFontSize(16);
             document.Add(totalAmount);

@@ -29,13 +29,13 @@ namespace FakturaMaker.src
         /// <param name="vat">The value-added tax (VAT) applied to the item.</param>
         public Item(string name, double price, int count, string unit, double vat)
         {
+            if (price < 0) { throw new ArgumentException("Price cannot be negative."); }
+            if (count < 0) { throw new ArgumentException("Count cannot be negative."); }
             this.name = name;
             this.price = price;
             this.count = count;
             this.unit = unit;
-            this.total = count * price;
             this.vat = vat;
-            this.totalInclVat = count * price * (1 + vat / 100);
         }
 
         /// <summary>
@@ -63,22 +63,29 @@ namespace FakturaMaker.src
         public string Unit { get => unit; set => unit = value; }
 
         /// <summary>
-        /// Gets or sets the total price of the item.
-        /// </summary>
-        /// <value>The total price of the item.</value>
-        public double Total { get => total; set => total = value; }
-
-        /// <summary>
         /// Gets or sets the value-added tax (VAT) applied to the item.
         /// </summary>
         /// <value>The value-added tax (VAT) applied to the item.</value>
         public double Vat { get => vat; set => vat = value; }
 
         /// <summary>
-        /// Gets or sets the total price of the item including VAT.
+        /// Calculates the total cost based on the count and price per unit, excluding VAT.
         /// </summary>
-        /// <value>The total price of the item including VAT.</value>
-        public double TotalInclVat { get => totalInclVat; set => totalInclVat = value; }
+        /// <returns>The total cost excluding VAT.</returns>
+        public double GetTotal()
+        {
+            return count * price;
+        }
+
+        /// <summary>
+        /// Calculates the total cost based on the count, price per unit, and VAT.
+        /// </summary>
+        /// <returns>The total cost including VAT.</returns>
+        public double GetTotalInclVat()
+        {
+            return this.count * this.price * (1 + this.vat / 100);
+        }
+
 
     }
 }
